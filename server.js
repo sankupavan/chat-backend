@@ -17,9 +17,8 @@ app.get("/", (req, res) => {
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    Origin: "https://chatwithsanku.netlify.app", // your Netlify site,
     methods: ["GET", "POST"],
-    credentials: true
   }
 });
 
