@@ -23,10 +23,12 @@ const io = new Server(server, {
   }
 });
 
+// Basic real-time relay
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
 
   socket.on("chat:message", (payload) => {
+    // Broadcast to all connected clients
     io.emit("chat:message", payload);
   });
 
